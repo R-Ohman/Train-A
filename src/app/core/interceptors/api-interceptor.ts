@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
-  private baseUrl = '/api';
+  private baseUrl = 'http://localhost:8083/api';
 
   intercept(
     req: HttpRequest<unknown>,

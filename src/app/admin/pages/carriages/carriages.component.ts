@@ -24,10 +24,12 @@ export class CarriagesComponent implements OnInit {
 
   carriages!: Signal<Carriage[]>;
 
+  isLoading = signal<boolean>(true);
+
   private carriageStore = inject(CarriageStore);
 
   ngOnInit(): void {
-    this.carriageStore.getCarriages();
+    this.carriageStore.getCarriages().then(() => this.isLoading.set(false));
     this.carriages = this.carriageStore.carriagesEntities;
   }
 

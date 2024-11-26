@@ -1,4 +1,4 @@
-@if (!carriages().length) {
+@if (isLoading()) {
   <app-spinner [loadText]="'Loading the carriages...'"></app-spinner>
 } @else {
   <div class="carriage-form">

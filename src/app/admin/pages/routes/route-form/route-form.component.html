@@ -59,7 +59,7 @@
                 (selectionChange)="onSetCarriage(i)"
               >
                 @for (carriage of carriageOptions(); track $index) {
-                  <mat-option [value]="carriage.code">{{
+                  <mat-option [value]="carriage.name">{{
                     carriage.name
                   }}</mat-option>
                 }

@@ -87,7 +87,10 @@ export class AdminService {
         return Promise.resolve([] as unknown as T);
       }
       isLoading = true;
-      return firstValueFrom(this.http.get<T>(endpoint))
+      return firstValueFrom(this.http.get<{ key: T }>(endpoint))
+        .then((data) => {
+          return Object.values(data)[0];
+        })
         .catch((error) => {
           throw error;
         })

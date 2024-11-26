@@ -74,7 +74,7 @@ export class SearchFormComponent {
       fromLongitude: fromStation?.longitude ?? 0,
       toLatitude: toStation?.latitude ?? 0,
       toLongitude: toStation?.longitude ?? 0,
-      time: dateTime / 1000,
+      time: Math.floor(dateTime / 1000),
     };
 
     await this.searchStore.searchRoutes(searchRoutesParams).catch((error) => {

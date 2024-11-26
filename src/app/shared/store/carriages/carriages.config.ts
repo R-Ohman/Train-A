@@ -5,5 +5,5 @@ import { Carriage } from '@shared/models/interfaces/carriage.model';
 export const carriageConfig = entityConfig({
   entity: type<Carriage>(),
   collection: 'carriages',
-  selectId: (carriage) => carriage.code,
+  selectId: (carriage) => carriage.name,
 });

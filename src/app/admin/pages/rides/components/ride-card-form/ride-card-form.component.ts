@@ -18,7 +18,7 @@ export class RideCardFormComponent {
   });
 
   rideSegments = computed(() => {
-    return this.ridesStore.stations();
+    return this.ridesStore.stations().slice(0, -1);
   });
 
   carriageTypes = computed(() => {
