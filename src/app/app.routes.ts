@@ -92,6 +92,7 @@ export const routes: Routes = [
             (m) => m.RoutesComponent,
           ),
         canActivateChild: [AuthGuard, AdminRoleGuard],
+        data: { animation: 'RoutePage' },
       },
       {
         path: RoutePath.AdminRideManagement,
@@ -101,6 +102,7 @@ export const routes: Routes = [
             (m) => m.RidesComponent,
           ),
         canActivateChild: [AuthGuard, AdminRoleGuard],
+        data: { animation: 'RidePage' },
       },
     ],
   },
