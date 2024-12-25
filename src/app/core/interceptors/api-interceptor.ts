@@ -9,14 +9,12 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
-  private baseUrl = 'http://localhost:8083/api';
-
   intercept(
     req: HttpRequest<unknown>,
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     const authReq = req.clone({
-      url: `${this.baseUrl}/${req.url}`,
+      url: `/api/${req.url}`,
     });
     return next.handle(authReq);
   }

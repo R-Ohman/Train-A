@@ -17,8 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "baseHref": "/Train-A/",
-            "outputPath": "dist/train-a",
+            "baseHref": "/",
+            "outputPath": "dist/train-a-ng",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",

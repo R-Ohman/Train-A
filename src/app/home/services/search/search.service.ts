@@ -37,7 +37,9 @@ export class SearchService {
     const isManager = this.profileService.userRole() === 'manager';
     const attr = isManager ? '?all=true' : '';
     return firstValueFrom(
-      this.http.get<Order[]>(`${ApiPath.Order}${attr}`),
+      this.http
+        .get<{ orders: Order[] }>(`${ApiPath.Order}${attr}`)
+        .pipe(map((data) => data.orders)),
     ).catch((error) => {
       throw error;
     });
